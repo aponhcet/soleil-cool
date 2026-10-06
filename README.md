@@ -6,3 +6,6 @@ Projet perso : le soleil en chiffres vérifiés, en scrollytelling rétro‑futu
 - `node calc.js` recalcule toutes les valeurs dérivées affichées.
 - Aucun son, aucun traceur, aucun cookie. Respecte `prefers-reduced-motion`.
 - Sources : voir la section « Sources et calculs » du site (UAI 2015 B3, NASA NSSDC, Energy Institute 2025, GIEC AR6 & SRREN, Fraunhofer ISE, LANL, NIST…).
+
+- Chapitre « pile de centrales » : pyramide SVG + odomètre temps-soleil (voir `pile.js`).
+- Notes de source visibles à côté de chaque chiffre (liens « source » vers la liste en bas).

@@ -1,0 +1,1 @@
+(function(){document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){try{window.dispatchEvent(new CustomEvent("soleil-lang",{detail:b.dataset.lang}))}catch(e){}})})})();

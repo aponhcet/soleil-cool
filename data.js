@@ -1,13 +1,36 @@
-/* Constantes sourcées — voir la section « Sources et calculs » de la page et calc.js */
+/* Constantes sourcées — validées 2026-10-06 contre UAI/NASA/EI/GIEC/Fraunhofer/NIST/LANL (voir Sources). calc.js recalcule les dérivés. */
 (function (root) {
   var C = {
-    L_SUN: 3.828e26, S0: 1361, R_SUN: 6.957e8, T_EFF: 5772, R_EARTH: 6.371e6,
-    VOL_RATIO_NSSDC: 1304000, T_CORE: 1.571e7, MASS_CONV_NSSDC: 4.26e9,
-    AU: 1.495978707e11, C_LIGHT: 299792458, H_MASS_FRACTION: 0.0071, TNT_T: 4.184e9,
-    HIROSHIMA_KT: 15, TSAR_MT: 50, WORLD_EJ: 592.22, BELGIUM_EJ: 2.25, PHONE_WH: 15,
-    YEAR_S: 365.25 * 86400, COAL_EJ: 165.06, NUCLEAR_EJ: 30.74, NUCLEAR_TWH: 2817.5,
-    TOA_MEAN: 340, SURF_DOWN: 185, LAND_KM2: 148.8e6, EARTH_SURF_KM2: 510.1e6,
-    SAHARA_KM2: 8.6e6, PV_EFF: 0.227, PV_PR: 0.80, SRREN_MIN_EJ: 1575, SRREN_MAX_EJ: 49837
+    L_SUN: 3.828e26,        // W — luminosité solaire nominale, IAU 2015 Résolution B3
+    S0: 1361,               // W/m² — irradiance solaire totale nominale, IAU 2015 B3
+    R_SUN: 6.957e8,         // m — rayon solaire nominal, IAU 2015 B3
+    T_EFF: 5772,            // K — température effective nominale, IAU 2015 B3
+    R_EARTH: 6.371e6,       // m — rayon moyen volumétrique de la Terre, NASA NSSDC
+    VOL_RATIO_NSSDC: 1304000, // Vsoleil/Vterre, NASA NSSDC Sun Fact Sheet
+    T_CORE: 1.571e7,        // K — température centrale, NASA NSSDC
+    MASS_CONV_NSSDC: 4.26e9,// kg/s — taux de conversion de masse, NASA NSSDC
+    AU: 1.495978707e11,     // m — unité astronomique, IAU 2012 B2 (exacte)
+    C_LIGHT: 299792458,     // m/s — exacte (SI)
+    H_MASS_FRACTION: 0.0071,// fraction de masse convertie en énergie H→He (OpenStax Astronomy 2e)
+    TNT_T: 4.184e9,         // J par tonne de TNT (convention)
+    HIROSHIMA_KT: 15,       // kt — LANL LA-8819 (1985), meilleure estimation
+    TSAR_MT: 50,            // Mt — Tsar Bomba, 30/10/1961 (AIEA, Nuclear Museum)
+    WORLD_EJ: 592.22,       // EJ — approvisionnement énergétique total mondial 2024, EI Statistical Review 2025
+    BELGIUM_EJ: 2.25,       // EJ — Belgique 2024, même source
+    PHONE_WH: 15,           // Wh — HYPOTHÈSE : batterie de smartphone typique (~12 à 20 Wh)
+    YEAR_S: 365.25 * 86400,
+    COAL_EJ: 165.06,        // EJ — charbon, approvisionnement total 2024, EI Statistical Review 2025
+    NUCLEAR_EJ: 30.74,      // EJ — nucléaire (équivalent chaleur d'entrée), 2024, EI 2025
+    NUCLEAR_TWH: 2817.5,    // TWh — production électrique nucléaire mondiale 2024, EI 2025
+    TOA_MEAN: 340,          // W/m² — rayonnement solaire moyen au sommet de l'atmosphère, GIEC AR6 GT1 fig. 7.2
+    SURF_DOWN: 185,         // W/m² — rayonnement solaire descendant moyen à la surface, GIEC AR6 GT1 fig. 7.2
+    LAND_KM2: 148.8e6,      // km² — terres émergées (29,2 % de la surface), UN Atlas of the Oceans / NOAA
+    EARTH_SURF_KM2: 510.1e6,// km² — surface totale de la Terre, même source
+    SAHARA_KM2: 8.6e6,      // km² — Sahara, Britannica (≈ 8,6 millions de km²)
+    PV_EFF: 0.227,          // rendement moyen des modules c-Si livrés fin 2024, Fraunhofer ISE Photovoltaics Report 2025
+    PV_PR: 0.80,            // ratio de performance initial d'un système PV, Fraunhofer ISE (typique 80–90 %)
+    SRREN_MIN_EJ: 1575,     // EJ/an — potentiel technique solaire mondial (min), GIEC SRREN 2011 tab. 3.1
+    SRREN_MAX_EJ: 49837     // EJ/an — idem (max)
   };
   var D = {};
   D.earthCross = Math.PI * C.R_EARTH * C.R_EARTH;
